@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,12 +16,26 @@ public class FirstTest {
     @Test
     public void demo(){
         WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");
         driver.get("http://www.google.com");
         String expectedTitle = "Google";
         String actualTitle = driver.getTitle();
         assertEquals(actualTitle, expectedTitle);
         System.out.println("After Assertion " + expectedTitle + actualTitle + " Title matched ");
 
+    }
+
+    @Test
+    public void demo2(){
+        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");
+        driver.get("https://www.yahoo.com/");
+        String expectedTitle = "Yahoo";
+        String actualTitle = driver.getTitle();
+        assertEquals(actualTitle, expectedTitle);
+        System.out.println("After Assertion " + expectedTitle + actualTitle + " Title matched ");
     }
 
 
