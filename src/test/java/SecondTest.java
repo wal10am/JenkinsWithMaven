@@ -6,27 +6,23 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.Assert.assertEquals;
 
-public class FirstTest {
-
+public class SecondTest {
     @Before
     public void startBrowser(){
         EnvironmentManager.initWebDriver();
     }
 
     @Test
-    public void demo(){
+    public void demo2(){
         WebDriver driver = new ChromeDriver();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox");
-        driver.get("http://www.google.com");
-        String expectedTitle = "Google";
+        driver.get("https://www.yahoo.com/");
+        String expectedTitle = "Yahoo";
         String actualTitle = driver.getTitle();
         assertEquals(actualTitle, expectedTitle);
         System.out.println("After Assertion " + expectedTitle + actualTitle + " Title matched ");
-
     }
-
-
-
-
 }
+
+
